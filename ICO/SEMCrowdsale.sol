@@ -96,10 +96,10 @@ contract SEMCrowdsale is Ownable {
         _;
     }
 
-    function startICO(uint durationInMinutes, uint weiCostOfEachToken, uint8 _minToken) public onlyOwner afterDeadline {
-        require(durationInMinutes > 0);
+    function startICO(uint durationInDays, uint weiCostOfEachToken, uint8 _minToken) public onlyOwner afterDeadline {
+        require(durationInDays > 0);
         require(numberOfICO > 0);
-        deadline = now + durationInMinutes * 1 minutes;
+        deadline = now + durationInDays * 1 days;
         price = weiCostOfEachToken.mul(1 wei);
         minToken = _minToken;
         numberOfICO = numberOfICO.sub(1);
