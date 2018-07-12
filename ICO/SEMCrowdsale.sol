@@ -6,7 +6,7 @@ contract Ownable {
     event OwnershipRenounced(address indexed previousOwner);
     event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
 
-    function Ownable() public {
+    constructor() public {
         owner = msg.sender;
     }
 
@@ -77,7 +77,7 @@ contract SEMCrowdsale is Ownable {
     event BuyTokens(address buyer, uint amount);
     event FundTransfer(address backer, uint amount, bool isContribution);
 
-    function SEMCrowdsale(
+    constructor(
         address _beneficiary,
         uint countOfIco,
         address addressOfToken

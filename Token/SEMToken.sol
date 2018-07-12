@@ -6,7 +6,7 @@ contract Ownable {
     event OwnershipRenounced(address indexed previousOwner);
     event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
 
-    function Ownable() public {
+    constructor() public {
         owner = msg.sender;
     }
 
@@ -244,7 +244,7 @@ contract SEMToken is StandardBurnableToken {
 
     uint256 public constant INITIAL_SUPPLY = 200000000 * (10 ** uint256(decimals));
 
-    function SEMToken() public {
+    constructor() public {
         totalSupply_ = INITIAL_SUPPLY;
         balances[msg.sender] = INITIAL_SUPPLY;
         emit Transfer(0x0, msg.sender, INITIAL_SUPPLY);
